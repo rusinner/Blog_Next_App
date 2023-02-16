@@ -6,3 +6,4 @@ package-lock.json
 .env
 tailwind.config.js
 Home.module.css
+postcss.config.js
