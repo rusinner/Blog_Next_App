@@ -1,5 +1,4 @@
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
 import { Categories, PostCard, PostWidget } from "../components";
 import { getPosts } from "../services";
 

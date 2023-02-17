@@ -1,8 +1,14 @@
-import { request, gql } from "graphql-request";
-
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHICS_ENDPOINT;
+import { gql, GraphQLClient } from "graphql-request";
 
 export const getPosts = async () => {
+  const endpoint = process.env.NEXT_PUBLIC_GRAPHICS_ENDPOINT;
+
+  const graphQLClient = new GraphQLClient(endpoint, {
+    headers: {
+      authorization: process.env.NEXT_PUBLIC_MY_TOKEN,
+    },
+  });
+
   const query = gql`
     query Assets {
       postsConnection {
@@ -33,6 +39,6 @@ export const getPosts = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query);
-  return result.postConnection.edges;
+  const result = await graphQLClient.request(query);
+  return result.postConnection;
 };
