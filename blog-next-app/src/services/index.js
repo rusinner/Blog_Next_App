@@ -40,5 +40,6 @@ export const getPosts = async () => {
   `;
 
   const result = await graphQLClient.request(query);
-  return result.postConnection;
+
+  return result.postsConnection;
 };
