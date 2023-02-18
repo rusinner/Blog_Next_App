@@ -2,7 +2,7 @@ import { GraphQLClient, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHICS_ENDPOINT;
 
-export default async function asynchandler(req, res) {
+export default async function comments(req, res) {
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
       authorization: process.env.NEXT_PUBLIC_MY_TOKEN,
@@ -39,5 +39,6 @@ export default async function asynchandler(req, res) {
     return res.status(200).send(result);
   } catch (error) {
     console.log(error);
+    return res.status(404).send(error);
   }
 }

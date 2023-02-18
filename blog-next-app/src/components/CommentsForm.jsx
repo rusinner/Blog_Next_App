@@ -21,6 +21,7 @@ const CommentsForm = ({ slug }) => {
     const { value: name } = nameEl.current;
     const { value: email } = emailEl.current;
     const { checked: storeData } = storeDataEl.current;
+
     if (!comment || !name || !email) {
       setError(true);
       return;
