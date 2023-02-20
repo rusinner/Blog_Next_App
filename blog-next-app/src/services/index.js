@@ -139,7 +139,7 @@ export const getCategories = async () => {
 };
 
 export const submitComment = async (obj) => {
-  const result = await fetch("/api/comments", {
+  const result = await fetch(`/api/comments`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -147,5 +147,5 @@ export const submitComment = async (obj) => {
     body: JSON.stringify(obj),
   });
   console.log(result);
-  return result.json();
+  return result;
 };
