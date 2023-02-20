@@ -1,6 +1,2 @@
 node_modules
-jsconfig.json
-next.config.js
-package-lock.json
 .env
-Home.module.css
