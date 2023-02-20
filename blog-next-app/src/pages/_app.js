@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "@/styles/globals.scss";
+import "../styles/globals.scss";
 import { Layout } from "../components";
 
 export default function App({ Component, pageProps }) {
