@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import { getCategories, getCategoryPost } from "../category";
+import { getCategories, getCategoryPost } from "../../services";
 import { PostCard, Categories, Loader } from "../../components";
 
 const CategoryPost = ({ posts }) => {
@@ -30,7 +30,6 @@ const CategoryPost = ({ posts }) => {
 };
 export default CategoryPost;
 
-// Fetch data at build time
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
 
